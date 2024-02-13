@@ -15,3 +15,9 @@
     - Ele também é chamado de workflow;
     - Para criar uma action no seu projeto, é necessário criar duas pastas chamadas uma dentro da outra ```.github/workflows```;
     - Dentro da pasta ```workflows``` criar um novo arquivo, claroque dependo do script qur você queira criar exemplo ```build.yml```;
+    - No seu repositório tem a opção de ir em **Actions** e depois escolher qual o tipo de plataforma você deseja criar e clicar em **Configure**, como mostra a imagem
+    - ![image](https://github.com/TheJessicaBohn/Curso-Git-GitHub-Balta/assets/47541659/49e121f5-fd76-4f5f-b2ce-57ee1234387b)
+    - Aqui ele dá um exemplo de Action para você colocar no seu repositório:
+    - ![image](https://github.com/TheJessicaBohn/Curso-Git-GitHub-Balta/assets/47541659/7a23db8e-18ee-44c8-b93f-c778af5008ae)
+
+
