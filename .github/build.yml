@@ -1,0 +1,46 @@
+name: Deploy CarnaCode Desafio
+
+#Controla quando a action vai executar.
+on:
+  #Triggers controla quando vai ser feito e em qual branch vai ser feito
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+#O que o código vai fazer
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    #Consiste em dar mais de uma opção de para rodar o script
+    strategy:
+      matrix: 
+        os: [ ubuntu-latest, windows-latest ]
+    
+      #O que de fato a action vai fazer
+      steps:
+            #No checkout ele copia o dockerfile para a maquina virtual rodar
+            - name: Checkout
+              uses: actions/checkout@v3
+            #Instala .NET na nossa maquina virtual
+            - name: Install .NET 
+              uses: actions/setup-dotnet@v3
+              with:
+                dotnet-version: 8.0.x
+                include-prerelease: true
+              
+            - name: Restore dependencies
+              run: dotnet restore
+            
+            - name: Build
+              run: dotnet build --no-restore
+            
+            - name: Publish .NET Project
+              run: dotnet publish src/YOUR_PROJECT_NAME/YOUR_PROJECT_NAME.csproj -c Release -o release --nologo
+            
+            - name: Deploy to gh-pages
+             uses: peaceiris/actions-gh-pages@v3
+                 with:
+                    #Necessário criar uma chave ssh
+                    github_token: ${{ secrets.GITHUB_TOKEN }}
+                    publish_dir: ./blazor
