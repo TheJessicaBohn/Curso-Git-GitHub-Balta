@@ -21,7 +21,7 @@
       ![image](https://github.com/TheJessicaBohn/Curso-Git-GitHub-Balta/assets/47541659/7a23db8e-18ee-44c8-b93f-c778af5008ae)
     - Apos criado o seu file de Actions é preciso criar uma chave SSH e subistituir o trecho seguinte:
       ![image](https://github.com/TheJessicaBohn/Curso-Git-GitHub-Balta/assets/47541659/f0e9fa52-04c0-400f-b18e-3aa4de1a935f)
-    - É necesserio criar uma pasta, abrir no terminal e executar o seguinte comando ```ssh-keygen -t rsa -b 4096 -C "(git config user.email)" -f "<your-deploy-branch>" -N ""```
+    - É necesserio criar uma pasta, abrir no terminal e executar o seguinte comando ```ssh-keygen -t rsa -b 4096 -C "(git config user.email)"```
       ![image](https://github.com/TheJessicaBohn/Curso-Git-GitHub-Balta/assets/47541659/84964ac3-301f-423c-b137-a0e10e1ba754)
     - Para fazer nosso Deploy é necessário antes criar uma branch pra isso, como na imagem abaixo:
       ![image](https://github.com/TheJessicaBohn/Curso-Git-GitHub-Balta/assets/47541659/9c1b9ce9-4504-4a4e-9272-42f0391122ea)
